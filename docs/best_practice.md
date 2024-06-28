@@ -402,11 +402,11 @@ Additionally, we strive to tag our commit message with one of the following topi
 
 The commit message title **must** be maximum of 72 characters long, while longer comments should be stated after the title, separated with a newline, e.g.:
 
-  docs: Add commit info to project conventions in a title of 72 characters
-
-  This is a comment which is stated after the title and can be as long and verbose as needed.
-
-  You can even add multiple comments, as long they are separated by newlines, like this and the above comments.
+> docs: Add commit info to project conventions in a title of 72 characters> 
+> 
+> This is a comment which is stated after the title and can be as long and verbose as needed.> 
+> 
+> You can even add multiple comments, as long they are separated by newlines, like this and the above comment.
 
 Avoid using special characters in commit messages if possible.
 
