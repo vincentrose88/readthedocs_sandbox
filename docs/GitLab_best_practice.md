@@ -1,13 +1,44 @@
+- [Executive summary](#executive-summary)
+- [GitLab preferences](#gitlab-preferences)
+- [Repository](#repository)
+	- [Included in repository](#included-in-repository)
+	- [Excluded in the repository](#excluded-in-the-repository)
+		- [Documentation](#documentation)
+- [Branches](#branches)
+	- [DOs](#dos)
+	- [DON'Ts](#donts)
+	- [How-to make branches](#how-to-make-branches)
+	- [Definition of Done](#definition-of-done)
+	- [Sharing files between branches ](#sharing-files-between-branches)
+	- [Merge updated master into the branch](#merge-updated-master-into-the-branch)
+	- [Cleaning up local branches](#cleaning-up-local-branches)
+	- [Changes committed to the _wrong branch_](#changes-committed-to-the-wrong-branch)
+		- [Cherry-pick changes to _correct branch_](#cherry-pick-changes-to-correct-branch)
+		- [Revert changes on _wrong branch_](#revert-changes-on-wrong-branch)
+- [Working with (large) data](#working-with-large-data)
+	- [Making the link](#making-the-link)
+- [Issues](#issues)
+	- [Structure issues and comments with headers](#structure-issues-and-comments-with-headers)
+	- [Comments vs description in issues](#comments-vs-description-in-issues)
+	- [Description style](#description-style)
+	- [Linked issues and use of the ~Blocked label](#linked-issues-and-use-of-the-blocked-label)
+- [Commits](#commits)
+	- [Commit chunks](#commit-chunks)
+- [Tags](#tags)
+- [Submodule](#submodule)
+- [Additional resources](#additional-resources)
+
+
 ## Executive summary
 The following goes into a lot of details on how to best use GitLab. It is meant as a look up resource (use the Table of Content above) to be used frequently by newly onboarded team members, though even veteran GitLab wizards (such as myself @vra) does occasionally refer to this resource to ensure best practices is still upheld.
 
 With that in mind, they key messages can be summarised into:
 
-:zero: Always work in a branch (see [How-to make branches](#how-to-make-branches)) and create the relevant folder structure for your work. Use soft relative links when possible and avoid absolute paths, as these will break when another person checks out the branch.
+0. Always work in a branch (see [How-to make branches](#how-to-make-branches)) and create the relevant folder structure for your work. Use soft relative links when possible and avoid absolute paths, as these will break when another person checks out the branch.
 
-:one: Ensure your setup is correctly sat up, so you can easily interact with git and always know whether you are in a folder watched by git or not. :bulb: Use `realpath .` instead of `pwd` to avoid getting confused by symbolic links.
+1. Ensure your setup is correctly sat up, so you can easily interact with git and always know whether you are in a folder watched by git or not. :bulb: Use `realpath .` instead of `pwd` to avoid getting confused by symbolic links.
 
-:two: Striving for atomic commits (see [Commits](#commits)) means
+2. Striving for atomic commits (see [Commits](#commits)) means
   - Avoid having only one commit with all your work at the end of a day. The average commits per day is 5-10 for a project team member working full time.
   - Avoid commits with more than a couple of files changes.
   - Split the changes into commit messages with distinct tags. Example of proper workflow:
@@ -15,11 +46,11 @@ With that in mind, they key messages can be summarised into:
 > 2. Run the script and debug the code with the `fix:` tag
 > 3. Run the working script and commit the results with the `result:` tag
 
-:three: Document your work in such a way another team member can take over. Take advantage of the markdown language to create a well structured README.md in your folder
+3. Document your work in such a way another team member can take over. Take advantage of the markdown language to create a well structured README.md in your folder
 
-:four: Ensure that you QC your code and documentation before submitting the branch for approval and merge to `master`, e.g. Ensure the code can run end-to-end without mistakes and that the results and scripts are aligned.
+4. Ensure that you QC your code and documentation before submitting the branch for approval and merge to `master`, e.g. Ensure the code can run end-to-end without mistakes and that the results and scripts are aligned.
 
-:five: Pull the latest version of `master` and merge into your branch often (see [Merge updated master into the branch](#merge-updated-master-into-the-branch)), or at least every time `master` is updated to avoid not catching merge conflicts.
+5. Pull the latest version of `master` and merge into your branch often (see [Merge updated master into the branch](#merge-updated-master-into-the-branch)), or at least every time `master` is updated to avoid not catching merge conflicts.
 
 
 ## GitLab preferences
@@ -223,12 +254,12 @@ git commit -m "build: revert wrongly made changes to meta, col overview and chan
 ```
 
 
-## Working with (large) data on Hydra and Git
+## Working with (large) data
 We don't want to put large datasets on git, but we want to have any checkout of the git repo to be able to access the data.
 We also want to easily load in the data without using absolute paths in our scripts (this can be broken!)
 
 **Solution**
-Add a soft link to the data folder on hydra to your git project. In R use the [`here`](https://here.r-lib.org) library to access your data.
+Add a soft link to the data folder in your git project. In R use the [`here`](https://here.r-lib.org) library to access your data.
 
 ### Making the link
 The link should be in the git project root (the data itself should not be in Git).
@@ -248,7 +279,7 @@ The command is simply
 cd `/opt/projects/7816_DRB/2022-01_Target_Discovery_data_foundation/users/vra/target-discovery-data-foundation`
 ln -s /opt/projects/7816_DRB/2022-01_Target_Discovery_data_foundation/data .
 git add data
-git commit -m "build: Add link to data on hydra"
+git commit -m "build: Ease navigation"
 git push
 ```
 
@@ -260,7 +291,7 @@ library(tidyverse)
 library(here)
 
 # Data: Read in the tab-separated zipped RNA expression consensus downloaded from the Human Protein Atlas
-# "data" is the soft link to the data location on hydra
+# "data" is the soft link to the data location
 hpa = read_delim(here("data","rna_tissue_consensus.tsv.zip"))
 ```
 
