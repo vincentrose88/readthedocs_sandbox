@@ -144,7 +144,7 @@ Follow this 6-step guide
    - [x] Delete source branch when the merge request is accepted.
    - [ ] Squash commits when the merge request is accepted.
 
-### Sharing files between branches<a name="sharing-files"></a>
+### Sharing files between branches
 
 - Sharing files between branches should **only** happen via `git checkout <branch-name> -- path/to/file`,
   - **NB** Only work when you are in the 'root' of the project, as the path is relative to this.
@@ -203,7 +203,7 @@ As the projects progress and you finish work on more and more branches, despite 
 
 Should it happen that you accidentally made some changes and committed them to a _wrong branch_, it is possible to move these changes/commits to a _correct branch_ and revert the changes on the _wrong branch_.
 You can do this by utilising the `git cherry-pick` and `git revert` commands.
-This is only possible if you have "clean" commits, i.e. one or more commits with specifically the changes would want to move to another branch. If you have "dirty" commits e.g. several changes in multiple files and you only want to move some of these changes to another branch, this cannot not be obtained with `git cherry-pick`. However, if you just want to move the changes in a single file you can use the method described [here](#sharing-files).
+This is only possible if you have "clean" commits, i.e. one or more commits with specifically the changes would want to move to another branch. If you have "dirty" commits e.g. several changes in multiple files and you only want to move some of these changes to another branch, this cannot not be obtained with `git cherry-pick`. However, if you just want to move the changes in a single file you can use the method described [here](#sharing-files-between-branches).
 
 #### Cherry-pick changes to _correct branch_
 
@@ -215,7 +215,7 @@ git log
 
 The output from `git log` will look something like this:
 
-```
+```shell
 commit 2e6c67b659be7739d62bebfafac9f01c51991af5
 Author: Marie Li Jensen <mail@corp.com>
 Date:   Wed Aug 23 12:25:37 2023 +0200
@@ -402,13 +402,11 @@ Additionally, we strive to tag our commit message with one of the following topi
 
 The commit message title **must** be maximum of 72 characters long, while longer comments should be stated after the title, separated with a newline, e.g.:
 
-```
-docs: Add commit info to project conventions in a title of 72 characters
+  docs: Add commit info to project conventions in a title of 72 characters
 
-This is a comment which is stated after the title and can be as long and verbose as needed.
+  This is a comment which is stated after the title and can be as long and verbose as needed.
 
-You can even add multiple comments, as long they are separated by newlines, like this and the above comments.
-```
+  You can even add multiple comments, as long they are separated by newlines, like this and the above comments.
 
 Avoid using special characters in commit messages if possible.
 
@@ -443,7 +441,7 @@ It is best practice to ensure that everytime a branch is merged to master the fi
 
 An example of a `CHANGELOG.md` file is:
 
-```
+```markdown
 # Next version
 (placeholder for next version)
 
