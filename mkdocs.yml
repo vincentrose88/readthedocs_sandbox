@@ -5,3 +5,5 @@ nav:
   - Infrastructure: 'hpc_servers.md'
 theme: readthedocs
 repo_url: https://github.com/vincentrose88/readthedocs_sandbox
+extra_css:     
+  - 'css/tailored.css'
