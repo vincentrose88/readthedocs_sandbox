@@ -1,6 +1,6 @@
-site_name: Sandbox for Best Practice
+site_name: ReadTheDocs sandbox for best practice
 nav:
   - Home: index.md
   - Gitlab: best_practice.md
-  - Infrastructure: infrastructure.md
+  - Infrastructure: hpc_servers.md
 theme: readthedocs
