@@ -1,1 +1,4 @@
 site_name: Sandbox for Best Practice
+nav:
+  - 'index.md'
+  - 'GitLab_best_practice.md'
