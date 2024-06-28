@@ -1,6 +1,6 @@
 site_name: Sandbox for Best Practice
 nav:
   - Home: index.md
-  - Gitlab: GitLab_best_practice.md
+  - Gitlab: best_practice.md
   - Infrastructure: infrastructure.md
 theme: readthedocs
