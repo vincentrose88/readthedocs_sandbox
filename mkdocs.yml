@@ -5,7 +5,7 @@ nav:
   - Infrastructure: 'hpc_servers.md'
 theme: 
   name: readthedocs
-  logo: 'docs/css/nn_logo.png'
+  logo: 'css/nn_logo.png'
 # name: mkdocs
 #  color_mode: dark
 #  user_color_mode_toggle: true
