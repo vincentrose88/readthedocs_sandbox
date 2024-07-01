@@ -3,7 +3,9 @@ nav:
   - Home: 'index.md'
   - Gitlab: 'best_practice.md'
   - Infrastructure: 'hpc_servers.md'
-theme: readthedocs
+theme: 
+  name: readthedocs
+  color_mode: auto
 repo_url: https://github.com/vincentrose88/readthedocs_sandbox
 extra_css:     
   - 'css/tailored.css'
