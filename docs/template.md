@@ -17,8 +17,8 @@ Fill out this template and follow the step-by-step process to contribute to
     ```
 4. Fill out the template copy (see below) and delete this preface
 5. Create a pull request and tag one of the github's maintainers to get the documentation approved and merged:
-  - @QMOK
-  - @...
+   - @QMOK
+   - @...
 6. Bathe in the glory of your peers who will thank you profusely for providing well written documentation that solved all their needs
 
 # Template
@@ -39,9 +39,10 @@ Fill out this template and follow the step-by-step process to contribute to
 *Try to write in a way that make it clear what needs to be done, with concrete examples, to check if the reader has understood the text. For example:*
 
 > In VSCode log-on to Einstein via SSH, by using the extension [`Remote - SSH`](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh). Open up the terminal after log-in (Hotkey: CTRL+j). If successful you should get a prompt like:
-    ```zsh
-    $ vnna@einstein ~
-    ```
+>    
+>    ```zsh
+>    $ vnna@einstein ~
+>    ```
 
 ## Supplementary text
 If there are supplementary and relevant documentation elsewhere, such as a SharePoint page, link this here - this will make it easier to navigate to the source of implicite assumptions 
